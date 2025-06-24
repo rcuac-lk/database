@@ -14,7 +14,7 @@ USE hacktwru_rcuac;
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 24, 2025 at 12:09 AM
+-- Generation Time: Jun 24, 2025 at 08:20 AM
 -- Server version: 5.5.68-MariaDB
 -- PHP Version: 8.3.17
 
@@ -205,21 +205,22 @@ INSERT INTO `attendance` (`AttendanceID`, `StudentID`, `AttendanceDate`, `Sessio
 
 CREATE TABLE `distance` (
   `id` int(11) NOT NULL,
-  `length` int(11) NOT NULL
+  `length` int(11) NOT NULL,
+  `Active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `distance`
 --
 
-INSERT INTO `distance` (`id`, `length`) VALUES
-(1, 25),
-(2, 33),
-(3, 50),
-(4, 66),
-(5, 100),
-(6, 200),
-(7, 400);
+INSERT INTO `distance` (`id`, `length`, `Active`) VALUES
+(1, 25, 1),
+(2, 33, 1),
+(3, 50, 1),
+(4, 66, 1),
+(5, 100, 1),
+(6, 200, 1),
+(7, 400, 1);
 
 -- --------------------------------------------------------
 
@@ -229,18 +230,19 @@ INSERT INTO `distance` (`id`, `length`) VALUES
 
 CREATE TABLE `event` (
   `EventID` int(11) NOT NULL,
-  `EventName` varchar(100) DEFAULT NULL
+  `EventName` varchar(100) DEFAULT NULL,
+  `Active` tinyint(4) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`EventID`, `EventName`) VALUES
-(1, 'Free Style'),
-(2, 'Back Stroke'),
-(3, 'Breast Stroke'),
-(4, 'Butterfly');
+INSERT INTO `event` (`EventID`, `EventName`, `Active`) VALUES
+(1, 'Free Style', 1),
+(2, 'Back Stroke', 1),
+(3, 'Breast Stroke', 1),
+(4, 'Butterfly', 1);
 
 -- --------------------------------------------------------
 
@@ -357,10 +359,6 @@ CREATE TABLE `refreshTokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `refreshTokens`
---
-
---
 -- Table structure for table `roles`
 --
 
@@ -393,18 +391,19 @@ CREATE TABLE `sessions` (
   `id` int(11) NOT NULL,
   `sessionName` varchar(255) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `createdByUser` int(11) DEFAULT NULL
+  `createdByUser` int(11) DEFAULT NULL,
+  `Active` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sessions`
 --
 
-INSERT INTO `sessions` (`id`, `sessionName`, `description`, `createdByUser`) VALUES
-(1, 'Weekend Session', 'Only holidays', 1),
-(2, 'Morning Practice Session', 'Regular', 1),
-(3, 'Evening Practice Session', 'Regular', 1),
-(4, 'Natianal Championship', 'Annual', 1);
+INSERT INTO `sessions` (`id`, `sessionName`, `description`, `createdByUser`, `Active`) VALUES
+(1, 'Weekend Session', 'Only holidays', 1, 1),
+(2, 'Morning Practice Session', 'Regular', 1, 1),
+(3, 'Evening Practice Session', 'Regular', 1, 1),
+(4, 'Natianal Championship', 'Annual', 1, 1);
 
 -- --------------------------------------------------------
 
