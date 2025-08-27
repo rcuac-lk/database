@@ -388,7 +388,7 @@ INSERT INTO `roles` (`id`, `name`, `createdAt`, `updatedAt`) VALUES
 --
 
 CREATE TABLE `sessions` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sessionName` varchar(255) NOT NULL,
   `description` varchar(255) DEFAULT NULL,
   `createdByUser` int(11) DEFAULT NULL,
