@@ -50,12 +50,21 @@ CREATE TABLE `agecategory` (
 -- Dumping data for table `agecategory`
 --
 
+-- INSERT INTO `agecategory` (`id`, `category`, `Description`, `MinAge`, `MaxAge`) VALUES
+-- (1, 'Under 11', 'Age from 5 - 10', 5, 10),
+-- (2, 'Under 13', 'Age from 11 - 12', 11, 12),
+-- (3, 'Under 15', 'Age from 13 - 14', 13, 14),
+-- (4, 'Under 17', 'Age from 15 - 16', 15, 16),
+-- (5, 'Under 19', 'Age from 17 - 18', 17, 18);
+
 INSERT INTO `agecategory` (`id`, `category`, `Description`, `MinAge`, `MaxAge`) VALUES
-(1, 'Under 11', 'Age from 5 - 10', 5, 10),
-(2, 'Under 13', 'Age from 11 - 12', 11, 12),
-(3, 'Under 15', 'Age from 13 - 14', 13, 14),
-(4, 'Under 17', 'Age from 15 - 16', 15, 16),
-(5, 'Under 19', 'Age from 17 - 18', 17, 18);
+(1, 'Under 10', 'Age from 5 - 9', 5, 9),
+(2, 'Under 12', 'Age from 10 - 11', 10, 11),
+(3, 'Under 14', 'Age from 12 - 13', 12, 13),
+(4, 'Under 16', 'Age from 14 - 15', 14, 15),
+(5, 'Under 18', 'Age from 16 - 17', 16, 17),
+(6, 'Under 20', 'Age from 18 - 19', 18, 19);
+
 
 -- --------------------------------------------------------
 
